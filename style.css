@@ -1,0 +1,733 @@
+:root {
+    --primary: #2e7d32;
+    --primary-light: #60ad5e;
+    --primary-dark: #005005;
+    --secondary: #f9f9f9;
+    --accent: #ff9800;
+    --text: #333;
+    --light-text: #666;
+    --white: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: var(--text);
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 20px 0;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 10px;
+    color: var(--accent);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #e68a00;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Services Section */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    color: var(--light-text);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.service-card:hover .service-img img {
+    transform: scale(1.1);
+}
+
+.service-content {
+    padding: 20px;
+}
+
+.service-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.service-content p {
+    color: var(--light-text);
+    margin-bottom: 15px;
+}
+
+.service-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+/* Packages Section */
+.packages {
+    background-color: var(--secondary);
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.package-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.package-card.popular {
+    border: 2px solid var(--accent);
+}
+
+.popular-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.package-header {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.package-header h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.package-body {
+    padding: 20px;
+}
+
+.package-features {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.package-features li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.package-features li i {
+    color: var(--primary);
+    margin-right: 10px;
+}
+
+.package-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.package-price span {
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--light-text);
+}
+
+.package-btn {
+    width: 100%;
+    text-align: center;
+}
+
+/* Booking Section */
+.booking {
+    background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.9)), url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae') no-repeat center center/cover;
+    color: var(--white);
+}
+
+.booking-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.booking-content {
+    text-align: center;
+}
+
+.booking-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.booking-content p {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.booking-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.booking-features li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.booking-features li i {
+    margin-right: 10px;
+    color: var(--accent);
+    font-size: 20px;
+}
+
+/* New Booking Form Styles */
+.form-container {
+    background-color: var(--white);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    color: var(--text);
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.form-header {
+    background-color: var(--primary);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 0;
+}
+
+.form-section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section-title {
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+div#customOptions {
+    border: 2px solid #ddd;
+    padding: 15px;
+}
+
+.package-option {
+    display: flex;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    font-weight: bold;
+}
+
+.package-option:hover {
+    border-color: var(--primary);
+}
+
+.package-option.selected {
+    border-color: var(--primary);
+    background-color: #f0f7f1;
+}
+
+.package-details {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.package-name {
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.package-price {
+    font-weight: bold;
+    font-size: 18px;
+    color: #d32f2f;
+}
+
+.package-saving {
+    color: var(--primary);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.package-includes {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.addon-option {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.addon-label {
+    display: flex;
+    align-items: center;
+}
+
+.addon-price {
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+}
+
+.total-price {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #d32f2f;
+    margin: 25px 0;
+}
+
+.submit-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.radio-option {
+    margin-bottom: 10px;
+}
+
+.size-option {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.checkbox-container {
+    margin-bottom: 10px;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: var(--secondary);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.testimonial-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.addon-label label {
+    margin-left: 10px;
+    font-weight: 700;
+    display: block;
+}
+
+.testimonial-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-author h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.testimonial-author p {
+    color: var(--light-text);
+    font-size: 14px;
+}
+
+.testimonial-rating {
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.testimonial-content p {
+    font-style: italic;
+    color: var(--text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent);
+}
+
+.footer-col p {
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    nav {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 80px);
+        background-color: var(--primary-dark);
+        transition: all 0.3s;
+        padding: 20px;
+    }
+
+    nav.active {
+        left: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+}
